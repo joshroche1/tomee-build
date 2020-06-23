@@ -13,6 +13,8 @@ iptables-save
 useradd tomee
 username=tomee
 PASSWORD=ApacheTomEE
+mkdir /home/tomee
+chown -R tomee: /home/tomee
 echo "$PASSWORD" | passwd --stdin "tomee"
 cp tomee.service /etc/systemd/system/
 systemctl daemon-reload 
