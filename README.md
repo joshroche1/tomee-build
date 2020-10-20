@@ -2,9 +2,10 @@
 Builds a TomEE environment on Ubuntu
 
 
-Keystore
+# Keystore
 
 To Import a Certificate and Chain
+
 
 keytool -import -alias tomee -keystore /home/tomee/.keystore -trustcacerts -file CHAINCERTFILE
 
