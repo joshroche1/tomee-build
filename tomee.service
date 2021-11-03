@@ -3,7 +3,7 @@ Description=Apache TomEE
 After=network.target
 
 [Service]
-User=tomee
+User=root
 Type=forking
 Environment=JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 Environment=CATALINA_PID=/opt/tomee/temp/tomee.pid
