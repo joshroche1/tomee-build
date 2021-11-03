@@ -12,3 +12,5 @@ openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
 mv server.crt /etc/ssl/certs
 mv server.key /etc/ssl/private
 rm server.csr
+mv nginx-tls-proxy-tomcat.conf /etc/nginx/conf.d/
+systemctl restart nginx
