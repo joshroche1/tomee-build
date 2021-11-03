@@ -43,7 +43,8 @@
 -->
   <role rolename="manager-gui"/>
   <role rolename="admin-gui"/>
-  <user username="tomee" password="ApacheTomEE" roles="manager-gui,admin-gui"/>
+  <role rolename="tomee-admin" />
+  <user username="tomee" password="ApacheTomEE" roles="manager-gui,admin-gui,tomee-admin"/>
   <!-- Activate those lines to get access to TomEE GUI if added (tomee-webaccess) -->
   <!--
   <role rolename="tomee-admin" />
