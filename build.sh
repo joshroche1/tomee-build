@@ -14,9 +14,10 @@ sudo mv /opt/tomee/conf/tomcat-users.xml /opt/tomee/conf/tomcatusers.xml.OLD
 sudo mv tomcat-users.xml /opt/tomee/conf/
 sudo mv /opt/tomee/webapps/manager/META-INF/context.xml /opt/tomee/webapps/manager/META-INF/context.xml.OLD
 sudo cp context.xml /opt/tomee/webapps/manager/META-INF/
-sudo mv tomcat-users.xml /opt/tomee/conf/
 sudo mv /opt/tomee/webapps/host-manager/META-INF/context.xml /opt/tomee/webapps/host-manager/META-INF/context.xml.OLD
 sudo mv context.xml /opt/tomee/webapps/host-manager/META-INF/
-sudo tomee.service /etc/systemd/system/
+sudo mv tomee.service /etc/systemd/system/
 sudo systemctl daemon-reload
+sudo systemctl enable tomee.service
 sudo systemctl start tomee.service
+sudo systemctl status tomee.service
