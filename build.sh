@@ -1,12 +1,10 @@
 #!/bin/bash
 
-
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install default-jdk maven nginx
-wget https://downloads.apache.org/tomee/tomee-8.0.8/apache-tomee-8.0.8-webprofile.tar.gz
-tar xvzf apache-tomee-8.0.8-webprofile.tar.gz
-mv apache-tomee-webprofile-8.0.8/ tomee/
-sudo mv tomee/ /opt/tomee/
+sudo apt-get install default-jdk maven
+wget https://downloads.apache.org/tomee/tomee-9.0.0-M7/apache-tomee-9.0.0-M7-webprofile.tar.gz
+tar xvzf apache-tomee-9.0.0-M7-webprofile.tar.gz
+sudo mv apache-tomee-webprofile-9.0.0-M7/ /opt/tomee/
 #
 #iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
 #iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8443
