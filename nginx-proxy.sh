@@ -1,16 +1,10 @@
 #!/bin/bash
 
 sudo apt install nginx
-openssl \
-    req \
-    -nodes \
-    -newkey rsa:4096 \
-    -keyout server.key \
-    -out server.csr \
-    -subj "/C=DE/ST=NRW/L=Berlin/O=My Inc/OU=DevOps/CN=Server/emailAddress=admin@localhost"
-openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
-mv server.crt /etc/ssl/certs
-mv server.key /etc/ssl/private
-rm server.csr
-mv nginx-tls-proxy-tomcat.conf /etc/nginx/conf.d/
+openssl req -x509 -newkey rsa:4096 \
+  -keyout /etc/ssl/private/server.key -out /etc/ssl/certs/server.crt \
+  -sha256 -days 365 -nodes -subj "/C=/ST=/L=/O=/OU=/CN=/emailAddress="
+cp nginx-tls-proxy-tomcat.conf /etc/nginx/sites-available/tomcat
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/tomcat /etc/nginx/sites-enabled/tomcat
 systemctl restart nginx
